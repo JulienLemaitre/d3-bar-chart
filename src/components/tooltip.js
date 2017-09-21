@@ -23,7 +23,6 @@ class Tooltip extends Component {
   render() {
 
     const { date, gdp, left, top } = this.props;
-    // console.log(date, gdp, left, top);
     const tooltipStyle = {
       left: (left + 20) + "px",
       top: (top - 20) + "px"

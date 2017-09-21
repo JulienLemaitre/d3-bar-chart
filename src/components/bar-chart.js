@@ -36,21 +36,19 @@ class BarChart extends Component {
     let parseDatas = [];
     datas.forEach(d => {
       let date = d[0].split("-").join(" ");
-      // date = d3.timeParse("%Y%m%d")(date);
       date = new Date(date);
       let gdp = d[1];
       parseDatas.push({ date, gdp });
     });
 
     // Title
-    let title = svg.append('text')
+    svg.append('text')
       .attr('x', width / 2)
       .attr('y', margin.top)
       .attr('text-anchor', 'middle')
       .attr('fill', 'steelblue')
-      .attr('class', 'title');
-    // Title
-    title.text(`USA Gross Domestic Product`);
+      .attr('class', 'title')
+      .text(`USA Gross Domestic Product`);
 
     // Scales
     const xExtent = d3.extent(parseDatas, d => d.date);
